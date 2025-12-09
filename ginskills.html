@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gingin</title>
+  <style>
+    body {
+      background-color: rgba(2,54,74); /* Orange with 60% opacity */
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+	  box-shadow: 0 4px 10px rgba(0,0,0,1.3);
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      background-color: #024d60; 
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,1.3);
+      height:60%;
+      width: 60%;
+	  margin-top: 60px;
+    }
+	
+	.container:hover {
+      transform: scale(1.1); /* zoom effect pag hover */
+    }
+
+    .container img {
+      width: 250px;
+      height: 250px;
+      border-radius: 10%;
+      margin-right: 20px;
+      border: 5px solid #444;
+	  margin-left: 30px ;
+    }
+
+    .text {
+      position: relative;
+      color: white;
+      font-size: 1.5rem;
+      text-align: ;
+      margin-top: -5vh;
+	  margin-left: 40px;
+    }
+
+    .text h1 {
+      margin: 0 0 5px 0;
+    }
+
+    .text p {
+      margin: 5px 0;
+    }
+	
+	nav {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 30px; /* space between links */
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent bar kineme*/
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FFD700; /* porda gold highligth */
+	  transform: scale(1.2); /* porda zoom to */
+    }
+  </style>
+</head>
+<body>
+    
+    <nav>
+    <a href="hpage.html">Home</a>
+    <a href="ginabout.html">About</a>
+    <a href="ginaeduc.html">Education</a>
+    <a href="ginskills.html">Skills</a>
+    <a href="ginacontact.html">Contact</a>
+  </nav>  
+
+  <div class="container">
+    <!-- Right side text -->
+    <div class="text">
+      <h1>Skills</h1>
+	  <p>● Drawing & Painting (Traditional) </p>
+	  <p>● Sewing (Hand & Machine) </p>
+	  <p>● Textile Design & Embroidery</p>
+	  <p>● baking</p>
+      <p>● Fashion illustration & sketching</p>
+	  <p>● Styling & accessorizing</p>
+    </div>
+  </div>
+</body>
+</html>

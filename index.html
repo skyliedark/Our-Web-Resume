@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+  <title>Website Resume</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Background layer */
+    .background {
+      position: fixed;
+	  justify-content: space-evenly;
+      top: 0;	  
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.pinimg.com/736x/40/59/b9/4059b9bc08a2e95d4ce3fa0010eb3a89.jpg') repeat-x center;
+      background-size: cover;
+      filter: blur(4px);   /* blur effect lam nyu na un hehe */
+      z-index: -1;         /* behind everything else */
+    }
+
+    @keyframes moveBackground {
+      from { background-position: 0 0; }
+      to   { background-position: -1000px 0; }
+    }
+	
+    /* Foreground content */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: rgb(255, 255, 255);
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 40vh;
+    }
+    
+    .content {
+      position: relative;
+      z-index: 1;
+      color: rgb(0, 0, 0);
+      font-size: 2rem;
+      text-align:center ;
+      margin-top: 5vh;
+    
+	}
+	.container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 80px;
+	  background-size: 200px;
+    }
+
+    .card {
+	  width: 300px;
+	  height:300px;
+      background: rgba(95, 94, 94, 0.684); /* semi-transparent background */
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s;
+	  display: center;
+	  justify-content: center;
+	  align-items: center;
+    }
+
+    .card img {
+      display: block;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.1); /* zoom effect pag hover */
+    }
+	
+	.box{
+	  position: relative;
+      z-index: 1;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      text-align:center;
+      margin-top: 100px;
+	}
+  a {
+    text-decoration: none;
+  }
+		
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h2>✩𝐆𝐞𝐭 𝐭𝐨 𝐤𝐧𝐨𝐰 𝐚𝐛𝐨𝐮𝐭 𝐮𝐬✩ </h2>
+  </div>
+  <div class="container">
+    <a href="ginabout.html">
+      <div class="card">
+        <img src="gina.jpg" alt="Image 1" title="GINALYN,LAURENTE">
+	        <table border="4" bordercolor="565449" bgcolor="565449" width="100%" cellpadding="10">
+		      	<tr>
+		      		<td align="center">
+  	      		  <h2><font color="white"><font size="">LAURENTE GINALYN</font></h2>
+		      		</td>
+		      	</tr>
+		      </table>
+      </div>
+    </a>
+
+    <a href="cai-about.html">
+      <div class="card">
+        <img src="cai.jpg" alt="Image 2" title="CAIRA GRACE,SAN PASCUAL">
+	         <table border="1" bordercolor="565449" bgcolor="565449" width="100%" cellpadding="10">
+	      			<tr>
+	      			  <td align="center">
+ 	      		      <h2><font color="white"><font size="">CAIRA GRACE SAN PASCUAL</font></h2>	
+	      				</td>
+	      			</tr>
+	      		</table>
+      </div>
+    </a>
+	
+    <a href="roseweb.html">
+      <div class="card">
+        <img src="rose.jpg.png" alt="Image 3" title="ROSE JEAN,AMOY">
+	        <table border="4" bordercolor="565449" bgcolor="565449" width="100%" cellpadding="10">
+	  			  <tr>
+	  			    <td align="center">
+    			      <h2><font color="white"><font size="">ROSE JEAN AMOY</font></h2>
+	  				  </td>
+	  			  </tr>
+	  			</table>
+      </div>	
+	  </a>
+	</div>
+	
+	<div class="background"></div>
+	
+    <div class="box"
+	    <footer>
+        <h4> ©2025 Our profesional Team. all rights reserve </h4>         
+	    </footer>
+    </div>  
+</body>
+</html>

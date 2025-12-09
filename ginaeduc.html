@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ging</title>
+  <style>
+    body {
+      background-color: rgba(2,54,74); /* Orange with 60% opacity */
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+	  box-shadow: 0 4px 10px rgba(0,0,0,1.3);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 80px;
+	  background-size: 200px;
+	  display: flex;
+      align-items: center;
+      background-color: #024d60; 
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,1.3);
+      height:40%;
+      width: 40%;
+	  margin-top: 60px;
+	  margin-right: 30px;
+    }
+
+    .card {
+	  width: 300px;
+	  height:300px;
+      background: rgba(0,0,255,0.3); /* kulay blue frame */
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s;
+	  display: center;
+	  justify-content: center;
+	  align-items: center;
+    }
+	
+	.container:hover {
+      transform: scale(1.1); /* zoom effect pag hover */
+    }
+
+    .text {
+      flex: 1; 
+	  margin-left: 20px;
+	  color: white;
+	  margin-top: 20px;
+    }
+
+    .text h1 {
+      margin: 0 0 5px 0;
+	  margin-bottom: 5px;
+	  margin-top: -5px;
+    } 
+
+    .text p {
+      margin: 5px 0;
+    }
+	
+	nav {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 30px; /* space between links */
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent bar kineme*/
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FFD700; /* porda gold highligth */
+	  transform: scale(1.2); /* porda zoom to */
+    }
+  </style>
+</head>
+<body>
+    
+    <nav>
+    <a href="hpage.html">Home</a>
+    <a href="ginabout.html">About</a>
+    <a href="ginaeduc.html">Education</a>
+    <a href="ginskills.html">Skills</a>
+    <a href="ginacontact.html">Contact</a>
+  </nav>  
+
+  <div class="container">
+
+    <!-- Right side text -->
+    <div class="text">
+      <h1>Education</h1>
+	  <br><strong>Bachelor in information technology</strong></br>
+	  <p>colegio de montalban.</p>
+      <p>(S.Y. 2024-2027)</p>
+      <p><strong>San isidro senior high school</strong> </p>
+	  <p>La solidaridad eastate homes phase 1-B, san isidro montalban rizal</p>
+	  <p>(S.Y. 2022-2024)</p>
+      
+      
+    </div>
+  </div>
+  
+  <div class="container">
+
+    <!-- Right side text -->
+    <div class="text">
+	  <p><strong>San isidro national high shcool(main)</strong></p>
+	  <p></p>
+      <p>(S.Y. 2018-2022)</p>
+      <p><strong>esteban abada elementary school</strong> </p>
+	  <p>quezon city, project 7, saling street</p>
+	  <p>(S.Y. 2013-2017)</p>
+
+      
+    </div>
+  </div>
+</body>
+</html>

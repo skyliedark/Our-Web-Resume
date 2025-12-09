@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Rose Jean B. Amoy, aspiring web developer.">
+    <title>Rose Resume</title>
+    <style>
+        body {
+            background: radial-gradient(circle,rgb(179, 38, 184) 30%, 
+			#fda6fd  80%);
+            color: white;
+            font-family: Century, sans-serif;
+            font-size: 17px;
+            margin: 0;
+            padding: 0;
+            backdrop-filter: blur(3px);
+            z-index: -1;
+
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: large;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background for visibility */
+            position: relative; /* For dropdown positioning */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav li {
+            position: relative;
+            margin: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #e669df;
+            transform: scale(1.2);
+        }
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(179, 38, 184, 0.2);
+            color: #FFD700;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        #menu-toggle:checked ~ .hamburger div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        #menu-toggle:checked ~ .hamburger div:nth-child(2) {
+            opacity: 0;
+        }
+        #menu-toggle:checked ~ .hamburger div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        #menu-toggle:checked ~ ul {
+            display: flex;
+        }
+        #introduction, #about, #education, #skills, #contact {
+            margin: 100px;
+            padding: 0px;
+            border-radius: 20px;
+            background-color: rgba(224, 174, 220, 0.495);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: underline;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Introduction Section */
+        .intro-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+            flex-wrap: wrap; /* For mobile */
+        }
+        .intro-image {
+            flex: 0 0 30%;
+            min-width: 200px;
+        }
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .intro-text {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        /* About Section */
+        .about-container {
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 1.2em;
+        }
+        .about-container p {
+            margin-bottom: 15px;
+        }
+        
+        /* Education Section */
+        .education-container {
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .education-header {
+            display: flex;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .education-header > div:first-child {
+            flex: 2;
+        }
+        .education-header > div:last-child {
+            flex: 1;
+            text-align: center;
+        }
+        .education-item {
+            display: flex;
+            padding: 10px;
+        }
+        .education-name {
+            flex: 3;
+        }
+        .education-year {
+            flex: 1;
+            text-align: center;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .skills-header {
+            display: flex;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .skills-header > div:first-child {
+            flex: 1;
+        }
+        .skills-header > div:last-child {
+            flex: 2;
+        }
+        .skill-item {
+            display: flex;
+            padding: 10px;
+        }
+        .skill-name {
+            flex: 1;
+        }
+        .skill-description {
+            flex: 2;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .contact-header {
+            display: flex;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .contact-header > div {
+            flex: 1;
+        }
+        .contact-item {
+            display: flex;
+            padding: 10px;
+        }
+        .contact-label {
+            flex: 1;
+        }
+        .contact-detail {
+            flex: 1;
+        }
+
+        /* Footer and Back to Top */
+        .back-to-top {
+            text-align: center;
+            margin: 30px 0 10px 0;
+        }
+        .back-to-top a {
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            margin-top: 20px;
+        }
+        footer hr {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .hamburger {
+                display: flex;
+            }
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.9);
+                display: none;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+            nav li {
+                margin: 0;
+                width: 100%;
+            }
+            nav a {
+                padding: 15px;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+            .dropdown-content {
+                position: static;
+                display: none;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .intro-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <header>
+        <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <ul>
+                <li><a href="hpage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about">About &#9662;</a> <!-- Down arrow for dropdown -->
+                    <div class="dropdown-content">
+                        <a href="#about">Overview</a>
+                        <a href="#about">Personal Interests</a>
+                        <a href="#about">Future Goals</a>
+                    </div>
+                </li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>WELCOME TO MY RESUME</h1>
+
+    <section id="introduction">
+        <div class="intro-container">
+            <div class="intro-image">
+                <img src="rose.jpg.png" alt="Rose Jean B. Amoy">
+            </div>
+            <div class="intro-text">
+                <h1>Hi, I'm Rose Jean B. Amoy 𐙚</h1>
+                <p>(Aspiring Web Developer)</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me 𐙚</h2>
+        <div class="about-container">
+            <p>Hello! I'm <b>Rose Jean B. Amoy</b>, a passionate and dedicated individual with a keen interest in web development and technology. 
+            Currently, I am pursuing my studies at <b>Colegio de Montalban</b>, where I am honing my skills and knowledge in the field of <b>Information Technology (IT).</b></p>
+            <p>I am enthusiastic about learning new technologies and continuously improving my skills to stay updated with the ever-evolving technologies.</p>
+            <p>I am a creative and curious person with a love for exploring new places and ideas. I believe that every day is an opportunity for a new adventure, no matter how big or small. 
+            I am excited about the opportunities that lie ahead and look forward to contributing my skills and knowledge to future projects and endeavors.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education 𐙚</h2>
+        <div class="education-container">
+            <div class="education-header">
+                <div>Educational Attainment</div>
+                <div>Year</div>
+            </div>
+            <div class="education-item">
+                <div class="education-name">Colegio de Montalban</div>
+                <div class="education-year">2024-Present</div>
+            </div>
+            <div class="education-item">
+                <div class="education-name">Kasiglahan Village Senior High School - ICT Strand</div>
+                <div class="education-year">2022-2024</div>
+            </div>
+            <div class="education-item">
+                <div class="education-name">Kasiglahan Village National High School</div>
+                <div class="education-year">2018-2022</div>
+            </div>
+            <div class="education-item">
+                <div class="education-name">Kasiglahan Village Elementary School</div>
+                <div class="education-year">2016-2018</div>
+            </div>
+            <div class="education-item">
+                <div class="education-name">Commonwealth Elementary School</div>
+                <div class="education-year">2012-2016</div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section id="skills">
+        <h2>Skills 𐙚</h2>
+        <div class="skills-container">
+            <div class="skills-header">
+                <div></div>
+                <div>Description</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; Computer System and Servicing</div>
+                <div class="skill-description">Knowledgeable in computer hardware, troubleshooting, and maintenance.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; C++</div>
+                <div class="skill-description">Basic programming and problem-solving using C++ language.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; Responsive Design</div>
+                <div class="skill-description">Ability to create web layouts that adapt to different devices.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; Networking 1</div>
+                <div class="skill-description">Understanding of basic networking concepts and setup.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; Problem Solving</div>
+                <div class="skill-description">Effective at analyzing issues and finding solutions.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">&#10035; Communication</div>
+                <div class="skill-description">Good at verbal communication skills</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact 𐙚</h2>
+        <div class="contact-container">
+            <div class="contact-header">
+                <div></div>
+                <div>Details</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">📩 Email Address</div>
+                <div class="contact-detail">rosejea*****@gmail.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">📞 Phone Number</div>
+                <div class="contact-detail">(+63) 966*****92</div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="back-to-top">
+        <a href="#top"><u>Back to Top</u></a>
+    </div>
+    
+    <footer>
+        <hr>
+        <p>&copy; 2025 Rose Jean B. Amoy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
